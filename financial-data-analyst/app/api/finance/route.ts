@@ -4,8 +4,16 @@ import Anthropic from "@anthropic-ai/sdk";
 import type { ChartData } from "@/types/chart";
 
 // Initialize Anthropic client with correct headers
+// const anthropic = new Anthropic({
+//   apiKey: process.env.ANTHROPIC_API_KEY!,
+// });
+const apiKey = process.env.ANTHROPIC_API_KEY;
+const accountId = process.env.ACCOUNT_ID;
+const gatewayId = process.env.GATEWAY_ID;
+const baseURL = `https://gateway.ai.cloudflare.com/v1/${accountId}/${gatewayId}/anthropic`;
 const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY!,
+    apiKey: apiKey,
+    baseURL: baseURL
 });
 
 export const runtime = "edge";
