@@ -15,6 +15,8 @@ const anthropic = new Anthropic({
     apiKey: apiKey,
     baseURL: baseURL
 });
+// console.log("Anthropic API Key:", apiKey);
+// console.log("Base URL:", baseURL);
 
 export const runtime = "edge";
 
